@@ -1,12 +1,17 @@
+/**Global**/
 *{
     margin: 0;
     padding: 0;
 }
 
+
+
 body{
     font-family:Arial, Helvetica, sans-serif;
-    height: 100vh;
 }
+/**Cabeçalho da pagina**/
+
+
 
 header{
     height: 20vh;
@@ -16,9 +21,31 @@ header{
     padding: 20px;
     background-color: rgb(238, 235, 235);
 }
+/**EStrutura da Pagina**/
+.card{
+    margin-top: 20px;
+    border-radius: 5px;
+}
 
+.cardImg{
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 4px;
+}
+/**Estilo de Titulos**/
+div h1{
+    font-size: 40px;
+}
+    
+/**Estilo de Texto**/
 p{
     line-height: 20px;
+}
+
+/**Estilo de Formulários**/
+legend{
+    margin-top: 10px;
 }
 
 label{
@@ -34,19 +61,4 @@ label{
     height: 35px;
     background-color: white;
     padding: 8px;
-}
-
-.card{
-    margin-top: 20px;
-    border-radius: 5px;
-}
-
-.cardImg{
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-legend{
-    margin-top: 10px;
 }
