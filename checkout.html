@@ -19,70 +19,84 @@
                 <p>Obrigado por comprar na RCHLO! Preencha seus dados para efetivar a compra.</p>
             </div>
         </header>
-        <section >
-            <div class="container">
+        <section>
+            <div class="container p-4 gx-md-5" >
             <!-- Dados do Produto-->
-                <div class="card">
-                    <div class="card-header"><h2>Sua compra</h2></div>
-                    <div class="m-3">
-                        <div class="cardImg">
-                            <img src="https://static.riachuelo.com.br/RCHLO/14247984003/portrait/279d0565feb361cff852a6a792ffdb5c89890ba3.jpg" class="card-img-top"">
+                <div class="row">
+                    <!-- Card com imagem e dados do produto-->
+                    <div class="col-12 col-md-4">
+                        <div class="card p-0">
+                            <div class="card-header"><h2 style="width: 60%;">Sua compra</h2></div>
+                            <div class="card-body">
+                                <div class="cardImg " >
+                                    <img src="https://static.riachuelo.com.br/RCHLO/14247984003/portrait/279d0565feb361cff852a6a792ffdb5c89890ba3.jpg" class="card-img-top">
+                                </div>
+                                <h6 >Produto</h6>
+                                <p >Camiseta Manga Curta Malha Tie Dye The Simpsons Branco Riachuelo</p>
+                                <h6 >Cor</h6>
+                                <p >Branco</p>
+                                <h6 >Tamanho</h6>
+                                <p>G</p>
+                                <h6>Preço</h6>
+                                <p >R$ 69,90</p>
+                            </div>
                         </div>
-                        <h6 >Produto</h6>
-                        <p >Camiseta Manga Curta Malha Tie Dye The Simpsons Branco Riachuelo</p>
-                        <h6 >Cor</h6>
-                        <p >Branco</p>
-                        <h6 >Tamanho</h6>
-                        <p>G</p>
-                        <h6>Preço</h6>
-                        <p >R$ 69,90</p>
                     </div>
-                </div>
-                <div>
-                    <form>
-                        <!-- Formulario de Dados Pessoais-->
-                        <fieldset>
-                            <legend>Dados Pessoais</legend>
-                            <p>
-                                <label for="name">Nome Completo</label>
-                                <input  id="personalInput" name="name" type="text"/>
-                            </p>
-                            <p>
-                                <label for="email">Email</label>
-                                <input id="personalInput" name="email" type="email" placeholder="email@exemplo.com"/>
-                            </p>
-                            <p>
-                                <label for="cpf">CPF</label>
-                                <input id="personalInput" name="cpf" type="text" placeholder="000.000.000-00"/>
-                            </p>
-                            <p>
-                                <input id="newsletter" name="newsletter" type="checkbox"/>
-                                <label for="newsletter">Quero receber a newsletter da RCHLO!</label>
-                            </p>
-                        </fieldset>
-                        <!-- Formulario de Dados de Pagamento-->
-                        <fieldset>
-                            <legend>Cartão de crédito</legend>
-                            <p>
-                                <label for="cvv">Número - CVV</label>
-                                <input id="personalInput" name="cvv" type="text"/>
-                            </p>
-                            <p>
-                                <label for="cvv">Bandeira</label>
-                                <select id="personalInput" name="flag">
-                                    <option value="" disabled selected >Selecione...</option>
-                                    <option value="mastercard">MasterCard</option>
-                                    <option value="visa">VISA</option>
-                                    <option value="americanexpress">American Express</option>
-                                </select>
-                            </p>
-                            <p>
-                                <label for="shelflife">Validade</label>
-                                <input id="personalInput" name="shelflife" placeholder="--------- ----" type="date" onfocus="(this.type='date')" onblur="(this.type='text')">
-                            </p>
-                        </fieldset>
-                        <button type="submit" class="btn btn-primary">Confirmar Pedido</button>
-                    </form>
+                    <!-- Formularios-->
+                    <div class="col-12 col-md-8">
+                        <div class="row flex-left">
+                            <div class="col-12 col-lg-6">
+                                <form>
+                                    <!-- Formulario de Dados Pessoais-->
+                                    <fieldset>
+                                        <legend>Dados Pessoais</legend>
+                                        <p>
+                                            <label for="name">Nome Completo</label>
+                                            <input  id="personalInput" name="name" type="text"/>
+                                        </p>
+                                        <p>
+                                            <label for="email">Email</label>
+                                            <input id="personalInput" name="email" type="email" placeholder="email@exemplo.com"/>
+                                        </p>
+                                        <p>
+                                            <label for="cpf">CPF</label>
+                                            <input id="personalInput" name="cpf" type="text" placeholder="000.000.000-00"/>
+                                        </p>
+                                        <p>
+                                            <input id="newsletter" name="newsletter" type="checkbox"/>
+                                            <label for="newsletter">Quero receber a newsletter da RCHLO!</label>
+                                        </p>
+                                    </fieldset>
+                                </form>
+                            </div>
+                            <div class="col-12 col-lg-6">
+                                <form>
+                                    <!-- Formulario de Dados de Pagamento-->
+                                    <fieldset>
+                                        <legend>Cartão de crédito</legend>
+                                        <p>
+                                            <label for="cvv">Número - CVV</label>
+                                            <input id="personalInput" name="cvv" type="text"/>
+                                        </p>
+                                        <p>
+                                            <label for="cvv">Bandeira</label>
+                                            <select id="personalInput" name="flag">
+                                                <option value="" disabled selected >Selecione...</option>
+                                                <option value="mastercard">MasterCard</option>
+                                                <option value="visa">VISA</option>
+                                                <option value="americanexpress">American Express</option>
+                                            </select>
+                                        </p>
+                                        <p>
+                                            <label for="shelflife">Validade</label>
+                                            <input id="personalInput" name="shelflife" placeholder="--------- ----" type="date" onfocus="(this.type='date')" onblur="(this.type='text')">
+                                        </p>
+                                    </fieldset>
+                                </form>
+                            </div>
+                            <button type="submit" class="btn btn-primary col-4 col-lg-3">Confirmar Pedido</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
