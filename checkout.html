@@ -24,7 +24,7 @@
             <!-- Dados do Produto-->
                 <div class="row">
                     <!-- Card com imagem e dados do produto-->
-                    <div class="col-12 col-md-4">
+                    <div class="col-12 col-md-6 col-lg-4">
                         <div class="card p-0">
                             <div class="card-header"><h2 style="width: 60%;">Sua compra</h2></div>
                             <div class="card-body">
@@ -43,63 +43,58 @@
                         </div>
                     </div>
                     <!-- Formularios-->
-                    <div class="col-12 col-md-8">
-                        <div class="row flex-left">
-                            <div class="col-12 col-lg-6">
-                                <form>
-                                    <!-- Formulario de Dados Pessoais-->
-                                    <fieldset>
-                                        <legend>Dados Pessoais</legend>
-                                        <p>
-                                            <label for="name">Nome Completo</label>
-                                            <input  id="personalInput" name="name" type="text"/>
-                                        </p>
-                                        <p>
-                                            <label for="email">Email</label>
-                                            <input id="personalInput" name="email" type="email" placeholder="email@exemplo.com"/>
-                                        </p>
-                                        <p>
-                                            <label for="cpf">CPF</label>
-                                            <input id="personalInput" name="cpf" type="text" placeholder="000.000.000-00"/>
-                                        </p>
-                                        <p>
-                                            <input id="newsletter" name="newsletter" type="checkbox"/>
-                                            <label for="newsletter">Quero receber a newsletter da RCHLO!</label>
-                                        </p>
-                                    </fieldset>
-                                </form>
-                            </div>
-                            <div class="col-12 col-lg-6">
-                                <form>
-                                    <!-- Formulario de Dados de Pagamento-->
-                                    <fieldset>
-                                        <legend>Cartão de crédito</legend>
-                                        <p>
-                                            <label for="cvv">Número - CVV</label>
-                                            <input id="personalInput" name="cvv" type="text"/>
-                                        </p>
-                                        <p>
-                                            <label for="cvv">Bandeira</label>
-                                            <select id="personalInput" name="flag">
-                                                <option value="" disabled selected >Selecione...</option>
-                                                <option value="mastercard">MasterCard</option>
-                                                <option value="visa">VISA</option>
-                                                <option value="americanexpress">American Express</option>
-                                            </select>
-                                        </p>
-                                        <p>
-                                            <label for="shelflife">Validade</label>
-                                            <input id="personalInput" name="shelflife" placeholder="--------- ----" type="date" onfocus="(this.type='date')" onblur="(this.type='text')">
-                                        </p>
-                                    </fieldset>
-                                </form>
+                    <div class="col-12 col-md-6 col-lg-8">
+                        <form class="col-12">
+                            <!-- Formulario de Dados Pessoais-->
+                            <div class="row">
+                                <fieldset class="col-lg-6">
+                                    <legend>Dados Pessoais</legend>
+                                    <p>
+                                        <label for="name">Nome Completo</label>
+                                        <input  id="personalInput" name="name" type="text" maxlength="200" required/>
+                                    </p>
+                                    <p>
+                                        <label for="email">Email</label>
+                                        <input id="personalInput" name="email" type="email" placeholder="email@exemplo.com" maxlength="300" required/>
+                                    </p>
+                                    <p>
+                                        <label for="cpf">CPF</label>
+                                        <input id="personalInput" name="cpf" type="text" placeholder="000.000.000-00" maxlength="14" pattern="[0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2}" required/>
+                                    </p>
+                                    <p>
+                                        <input id="newsletter" name="newsletter" type="checkbox"/>
+                                        <label for="newsletter">Quero receber a newsletter da RCHLO!</label>
+                                    </p>
+                                </fieldset>
+                                <!-- Formulario de Dados de Pagamento-->
+                                <fieldset class="col-lg-6">
+                                    <legend>Cartão de crédito</legend>
+                                    <p>
+                                        <label for="cvv">Número - CVV</label>
+                                        <input id="personalInput" name="cvv" type="text" maxlength="3" pattern="[0-9]{3}" required/>
+                                    </p>
+                                    <p>
+                                        <label for="cvv">Bandeira</label>
+                                        <select id="personalInput" name="flag" required>
+                                            <option value="" disabled selected >Selecione...</option>
+                                            <option value="mastercard">MasterCard</option>
+                                            <option value="visa">VISA</option>
+                                            <option value="americanexpress">American Express</option>
+                                        </select>
+                                    </p>
+                                    <p>
+                                        <label for="shelflife">Validade</label>
+                                        <input id="personalInput" name="shelflife" placeholder="--------- ----" type="date" onfocus="(this.type='date')" onblur="(this.type='text')" required>
+                                    </p>
+                                </fieldset>
                             </div>
                             <button type="submit" class="btn btn-primary col-4 col-lg-3">Confirmar Pedido</button>
-                        </div>
+                        </form>
                     </div>
                 </div>
             </div>
         </section>
+        <script src="./js/checkout.js"></script>
     </body>
 </html>
 
