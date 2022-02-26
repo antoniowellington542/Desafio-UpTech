@@ -1,0 +1,52 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    height: 100vh;
+}
+
+header{
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: rgb(238, 235, 235);
+}
+
+p{
+    line-height: 20px;
+}
+
+label{
+    margin-bottom: 5px;
+}
+
+#personalInput{
+    display: block;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    border-width: 0.1px;
+    width: 100%;
+    height: 35px;
+    background-color: white;
+    padding: 8px;
+}
+
+.card{
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+.cardImg{
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+legend{
+    margin-top: 10px;
+}
