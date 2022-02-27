@@ -9,9 +9,8 @@
 body{
     font-family:Arial, Helvetica, sans-serif;
 }
+
 /**Cabeçalho da pagina**/
-
-
 
 header{
     height: 20vh;
@@ -33,6 +32,13 @@ header{
     border-radius: 5px;
     padding: 4px;
 }
+
+.price-product{
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+}
 /**Estilo de Titulos**/
 div h1{
     font-size: 40px;
@@ -52,23 +58,28 @@ label{
     margin-bottom: 5px;
 }
 
-select, input:not(#newsletter){
+
+
+.input-field select, .input-field input{
     display: block;
     border-radius: 5px;
-    border-width: 2px;
+    border: 1px solid #ccc;
     width: 100%;
     height: 35px;
     background-color: white;
     padding: 5px;
 }
 
+.input-field select:focus, .input-field input:focus{
+    outline: 0;
+}
 
-.input-field.error input{
-    border: 2px solid red;
+
+
+.input-field.error input, .input-field.error select{
+    border: 1px solid red;
 }
-.input-field.error select{
-    border: 2px solid red;
-}
+
 
 .input-field.error span{
     color: red;

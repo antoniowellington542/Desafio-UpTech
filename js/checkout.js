@@ -6,16 +6,36 @@ var inputCvv = document.getElementById("cvv");
 var inputFlag = document.getElementById("flag");
 var inputDate = document.getElementById("date");
 
-
 //comando que executa a função
+
+window.onload = function(){
+    
+    var inputAmountProduct = document.querySelector('[name=amountProduct]');
+    var outputPrice = document.querySelector('[name=totalPrice]');
+
+    inputAmountProduct.oninput = function() {
+
+        outputPrice.value = "R$ " + ((inputAmountProduct.value*69.9).toFixed(2)).replace('.', ',');
+        console.log(outputPrice.value);
+  }
+    //inputTotalPrice.value = 10 * inputAmountProductValue;
+}
+
+
 document.getElementById("submit").addEventListener("click", function(event){
     event.preventDefault();
     checkInputs();
 })
 
+
 //Função que verificar se o a variavel é um numero
 function isNumber(a){
     return !isNaN(a);
+}
+
+//Função que verificar se o input esta vazio
+function isVoid(a){
+    return a == "" || a == null
 }
 
 
@@ -41,6 +61,7 @@ function setSucess(status){
     fa.className= "fa";
 }
 
+
 //Função que verificar as entradas
 function checkInputs(){
 
@@ -53,14 +74,14 @@ function checkInputs(){
     var inputDateValue = inputDate.value.trim();
 
     //Checando Nome
-    if(inputNameValue === ""){
+    if(isVoid(inputNameValue)){
         setError(inputName, "Nome obrigatório!");
     }else{
         setSucess(inputName);
     }
 
     //Checando Email
-    if(inputEmailValue === ""){
+    if(isVoid(inputEmailValue)){
         setError(inputEmail, "Email obrigatório!");
     }else{
         var check=/\S+@\S+\.\S+/;
@@ -72,7 +93,7 @@ function checkInputs(){
     }
 
     //Checando CPF
-    if(inputCpfValue === ""){
+    if(isVoid(inputCpfValue)){
         setError(inputCpf, "CPF obrigatório!");
     }else{
         var cpfValido = /^[0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2}$/;
@@ -84,7 +105,7 @@ function checkInputs(){
     }
 
     //Checando CVV
-    if(inputCvvValue === "" || inputFlagValue == null){
+    if(isVoid(inputCvvValue)){
         setError(inputCvv, "Cvv obrigatório!");
     }else{ 
         if(inputCvvValue.length == 3 && isNumber(inputCvvValue)){
@@ -95,17 +116,19 @@ function checkInputs(){
     }
 
     //Checando bandeira
-    if(inputFlagValue == "" || inputFlagValue == null){
+    if(isVoid(inputFlagValue)){
         setError(inputFlag, "Bandeira obrigatória!");
     }else{
         setSucess(inputFlag);
     }
 
     //Checando Data
-    if(inputDateValue == "" || inputDateValue == null){
+    if(isVoid(inputDateValue)){
         setError(inputDate, "Data obrigatória!");
     }else{
         setSucess(inputDate);
     }
+
+
     
 }
