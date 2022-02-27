@@ -21,7 +21,7 @@ header{
     padding: 20px;
     background-color: rgb(238, 235, 235);
 }
-/**EStrutura da Pagina**/
+/**Estrutura da Pagina**/
 .card{
     margin-top: 20px;
     border-radius: 5px;
@@ -39,8 +39,8 @@ div h1{
 }
     
 /**Estilo de Texto**/
-p{
-    line-height: 20px;
+fieldset div{
+    margin-bottom: 5px;
 }
 
 /**Estilo de Formulários**/
@@ -52,13 +52,29 @@ label{
     margin-bottom: 5px;
 }
 
-#personalInput{
+select, input:not(#newsletter){
     display: block;
     border-radius: 5px;
-    border: 1px solid #ccc;
-    border-width: 0.1px;
+    border-width: 2px;
     width: 100%;
     height: 35px;
     background-color: white;
-    padding: 8px;
+    padding: 5px;
 }
+
+
+.input-field.error input{
+    border: 2px solid red;
+}
+.input-field.error select{
+    border: 2px solid red;
+}
+
+.input-field.error span{
+    color: red;
+}
+
+.input-field.error .fa{
+    color: red;
+}
+
