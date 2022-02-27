@@ -7,25 +7,20 @@ var inputFlag = document.getElementById("flag");
 var inputDate = document.getElementById("date");
 
 //comando que executa a função
-
 window.onload = function(){
     
     var inputAmountProduct = document.querySelector('[name=amountProduct]');
     var outputPrice = document.querySelector('[name=totalPrice]');
-
     inputAmountProduct.oninput = function() {
-
         outputPrice.value = "R$ " + ((inputAmountProduct.value*69.9).toFixed(2)).replace('.', ',');
         console.log(outputPrice.value);
   }
 }
 
-
 document.getElementById("submit").addEventListener("click", function(event){
     event.preventDefault();
     checkInputs();
 })
-
 
 //Função que verificar se o input é um numero
 function isNumber(a){
@@ -35,6 +30,23 @@ function isNumber(a){
 //Função que verificar se o input esta vazio
 function isVoid(a){
     return a == "" || a == null
+}
+
+//função que valida o email
+function validEmail(string){
+    var emailValid = /\S+@\S+\.\S+/;
+    return string.search(emailValid) == -1 ? true : false;
+}
+
+//função que valida o cpf
+function validCpf(string){
+    var cpfValid = /^[0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2}$/;
+    return cpfValid.test(string) != true ? true : false;
+}
+
+//função que valida o cvv
+function validCvv(string){
+    return (string.length == 3 && isNumber(string)) ? true : false;
 }
 
 
@@ -58,71 +70,56 @@ function setSucess(status){
     fa.className= "fa";
 }
 
+//Função que checa as Entradas
+function checkInput(string, textError, textSucess){
+    var stringValue = string.value.trim();
+
+    return (isVoid(stringValue)) ? setError(string, textError) : setSucess(string, textSucess);
+}
+
+//Função q verificar as regras do email, cpf e cvv
+function rulesInput(string, typeInput){
+
+    var inputValue = string.value.trim(); 
+
+    return  (typeInput === "email") ? validEmail(inputValue) :
+            (typeInput === "cpf") ? validCpf(inputValue) : validCvv(inputValue);   
+}
 
 //Função que verificar as entradas
 function checkInputs(){
 
-    //Valores do formulario
-    var inputNameValue = inputName.value.trim();
     var inputEmailValue = inputEmail.value.trim();
     var inputCpfValue = inputCpf.value.trim();
     var inputCvvValue = inputCvv.value.trim();
-    var inputFlagValue = inputFlag.value.trim();
-    var inputDateValue = inputDate.value.trim();
-
+    
     //Checando Nome
-    if(isVoid(inputNameValue)){
-        setError(inputName, "Nome obrigatório!");
-    }else{
-        setSucess(inputName);
-    }
+    checkInput(inputName, "Nome Obrigatório", "");
+
+    //Checando bandeira
+    checkInput(inputFlag, "Bandeira obrigatória", "");
+
+    //Checando Data
+    checkInput(inputDate, "Data obrigatória", "");
 
     //Checando Email
     if(isVoid(inputEmailValue)){
         setError(inputEmail, "Email obrigatório!");
     }else{
-        var check=/\S+@\S+\.\S+/;
-        if(inputEmailValue.length > 300 || inputEmailValue.search(check) == -1){
-            setError(inputEmail, "Padrão inválido para o Email!");
-        }else{
-            setSucess(inputEmail);
-        }
+        (rulesInput(inputEmail, "email")) ? setError(inputEmail, "Padrão inválido para o Email!") : setSucess(inputEmail);
     }
 
     //Checando CPF
     if(isVoid(inputCpfValue)){
         setError(inputCpf, "CPF obrigatório!");
     }else{
-        var cpfValido = /^[0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2}$/;
-        if(cpfValido.test(inputCpfValue) != true || !isNumber){
-            setError(inputCpf, "Padrão inválido para o CPF!");
-        }else{
-            setSucess(inputCpf);
-        }
+        (rulesInput(inputCpf, "cpf")) ? setError(inputCpf, "Padrão inválido para o CPF!") : setSucess(inputCpf);
     }
-
+    
     //Checando CVV
     if(isVoid(inputCvvValue)){
         setError(inputCvv, "Cvv obrigatório!");
     }else{ 
-        if(inputCvvValue.length == 3 && isNumber(inputCvvValue)){
-            setSucess(inputCvv);
-        }else{
-            setError(inputCvv, "Padrão invalido para o CVV!");
-        }
+        (!rulesInput(inputCvv, "cvv")) ?  setError(inputCvv, "Padrão invalido para o CVV!") : setSucess(inputCvv);
     }
-
-    //Checando bandeira
-    if(isVoid(inputFlagValue)){
-        setError(inputFlag, "Bandeira obrigatória!");
-    }else{
-        setSucess(inputFlag);
-    }
-
-    //Checando Data
-    if(isVoid(inputDateValue)){
-        setError(inputDate, "Data obrigatória!");
-    }else{
-        setSucess(inputDate);
-    }  
 }
