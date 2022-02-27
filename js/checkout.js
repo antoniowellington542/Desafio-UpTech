@@ -18,7 +18,6 @@ window.onload = function(){
         outputPrice.value = "R$ " + ((inputAmountProduct.value*69.9).toFixed(2)).replace('.', ',');
         console.log(outputPrice.value);
   }
-    //inputTotalPrice.value = 10 * inputAmountProductValue;
 }
 
 
@@ -28,7 +27,7 @@ document.getElementById("submit").addEventListener("click", function(event){
 })
 
 
-//Função que verificar se o a variavel é um numero
+//Função que verificar se o input é um numero
 function isNumber(a){
     return !isNaN(a);
 }
@@ -45,10 +44,8 @@ function setError(status, msg){
     inputBox.className= "input-field error";
     var span = inputBox.querySelector("span");
     span.innerText = msg;
-
-    
-        var fa = inputBox.querySelector(".fa");
-        fa.className= "fa fa-times-circle";
+    var fa = inputBox.querySelector(".fa");
+    fa.className= "fa fa-times-circle";
 }
 
 //Função que executa caso a entrada seja valida
@@ -127,8 +124,5 @@ function checkInputs(){
         setError(inputDate, "Data obrigatória!");
     }else{
         setSucess(inputDate);
-    }
-
-
-    
+    }  
 }
