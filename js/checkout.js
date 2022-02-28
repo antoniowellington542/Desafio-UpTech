@@ -76,7 +76,7 @@ function setSucess(status){
     fa.className= "fa";
 }
 
-//Função que checa as Entradas
+//Função que retorna o resultado da validação
 function validationResult(string, textError, textSucess){
     var value = inputValue(string);
     return (isVoid(value)) ? setError(string, textError) : setSucess(string, textSucess);
