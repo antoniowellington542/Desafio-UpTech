@@ -4,14 +4,20 @@
     padding: 0;
 }
 
-
-
 body{
     font-family:Arial, Helvetica, sans-serif;
+
+}
+
+h1{
+    font-size: 40px;
+}
+
+label{
+    margin-bottom: 5px;
 }
 
 /**Cabeçalho da pagina**/
-
 header{
     height: 20vh;
     display: flex;
@@ -20,46 +26,21 @@ header{
     padding: 20px;
     background-color: rgb(238, 235, 235);
 }
-/**Estrutura da Pagina**/
-.card{
-    margin-top: 20px;
-    border-radius: 5px;
-}
 
+/**Estilo do Card do Produtos**/
 .cardImg{
     margin-bottom: 10px;
     border: 1px solid #ccc;
-    border-radius: 5px;
     padding: 4px;
 }
 
 .price-product{
     margin-top: 5px;
     border: 1px solid #ccc;
-    border-radius: 5px;
     padding: 10px;
 }
-/**Estilo de Titulos**/
-div h1{
-    font-size: 40px;
-}
-    
-/**Estilo de Texto**/
-fieldset div{
-    margin-bottom: 5px;
-}
 
-/**Estilo de Formulários**/
-legend{
-    margin-top: 10px;
-}
-
-label{
-    margin-bottom: 5px;
-}
-
-
-
+/**Estilo dos inputs**/
 .input-field select, .input-field input{
     display: block;
     border-radius: 5px;
@@ -74,18 +55,10 @@ label{
     outline: 0;
 }
 
-
-
 .input-field.error input, .input-field.error select{
     border: 1px solid red;
 }
 
-
-.input-field.error span{
+.input-field .fa, span{
     color: red;
 }
-
-.input-field.error .fa{
-    color: red;
-}
-
