@@ -44,7 +44,6 @@ function validEmail(string){
     var emailValid = /\S+@\S+\.\S+/;
     return string.search(emailValid) == -1 ? true : false;
 }
-<<<<<<< HEAD
 
 //função que valida o cpf
 function validCpf(string){
@@ -57,20 +56,6 @@ function validCvv(string){
     return (string.length == 3 && isNumber(string)) ? true : false;
 }
 
-=======
-
-//função que valida o cpf
-function validCpf(string){
-    var cpfValid = /^[0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2}$/;
-    return cpfValid.test(string) != true ? true : false;
-}
-
-//função que valida o cvv
-function validCvv(string){
-    return (string.length == 3 && isNumber(string)) ? true : false;
-}
-
->>>>>>> 6374066362dd7da60b44ee51dc4dbfda9c5c9183
 //Função para entrada invalida
 function setError(status, msg){
     var inputBox = status.parentElement;
@@ -137,8 +122,4 @@ function checkInputs(){
     }else{ 
         (!rulesInput(inputCvv, "cvv")) ?  setError(inputCvv, "Padrão invalido para o CVV!") : setSucess(inputCvv);
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 6374066362dd7da60b44ee51dc4dbfda9c5c9183
